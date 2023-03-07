@@ -49,13 +49,46 @@ After listing the requirements, I made a list of tasks that I should do before s
 
 ### Tasks to be done
 
-1. [ ] Get art assets for top-down view enviroment
-2. [ ] Get player art assets
-3. [ ] Get art assets for the cloth shop
-    1. [ ] Figure out a way to fit all outfit related conditions
-    2. [ ] Find art assets that fit what were planned
+1. [X] Get art assets for top-down view enviroment
+
+    Four tilesets were picked for complete this task. They were: [RPG Tropical Tileset](https://free-game-assets.itch.io/rpg-tropical-tileset), [RPG Summer Tileset](https://free-game-assets.itch.io/rpg-summer-tileset), [RPG Winter Tileset](https://free-game-assets.itch.io/rpg-winter-tileset) and [RPG Autumn Tileset](https://free-game-assets.itch.io/rpg-autumn-tileset).
+
+2. [X] Get player art assets
+
+    The player art assets were found along with the clouthes assets
+
+3. [X] Get art assets for the cloth shop
+    1. [X] Figure out a way to fit all outfit related conditions
+
+        To make changeable outfits, the player game object needs to have separated components for head, hair, torso and feet. 
+
+    2. [X] Find art assets that fit what were planned
+
+        Several asset packs the follow the desired conditions were found. To start the development, three were selected: [Seller NPC Character Sprites](https://free-game-assets.itch.io/seller-npc-character-sprites), [Wizard 4-Direction Game Characters](https://free-game-assets.itch.io/wizard-4-direction-game-characters) and [Archer 4-Direction Characters](https://free-game-assets.itch.io/archer-4-direction-characters). Depending on   how the development goes, more will be added.
 
 > Some questions about the game design were raised while writing this document, which will be answered later:
 > - How the player will get the money to buy the clothes?
 > - The player will get inside the shop (as the seeds shop in Stardew Valley)?
 > - The game will have combat with animals?
+
+## Development
+
+The plan for the development were to start doing the necessary for the map construction, create the tiles and palletes needed. After that, the aproach were to develop the core functions, starting by the walk, followed by the interaction with other objects.
+
+### Tasks to be done (initial draft)
+
+- [ ] World building (tiles, palletes, colliders...)
+- [ ] Movimentation
+- [ ] Interaction with other objects
+- [ ] Inventory
+- [ ] Changing clothes mechanics
+- [ ] Shop UI
+- [ ] Buy / Sell mechanics
+
+## List of used Asset Packs
+
+- **Sprites**
+    - https://free-game-assets.itch.io/rpg-summer-tileset
+    - https://free-game-assets.itch.io/seller-npc-character-sprites
+    - https://free-game-assets.itch.io/wizard-4-direction-game-characters
+    - https://free-game-assets.itch.io/archer-4-direction-characters
