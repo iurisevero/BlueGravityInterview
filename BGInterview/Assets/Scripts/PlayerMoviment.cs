@@ -15,30 +15,60 @@ public class PlayerMoviment : MonoBehaviour
     public float runSpeed = 3f;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponentInChildren<Animator>();
+        StartCoroutine(BlinkTriggerCorountine());
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
+        if(Input.GetKeyDown(KeyCode.LeftShift))
+            running = !running;
+
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
         
         animator.SetFloat("Horizontal", movement.x);
         animator.SetFloat("Vertical", movement.y);
+        animator.SetFloat("LastDirection", LastDirectionValue(movement));
         animator.SetBool("Walking", movement.sqrMagnitude > 0);
-
-        if(Input.GetKeyDown(KeyCode.LeftShift))
-            running = !running;
+        animator.SetBool("Running", running);
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         rb.MovePosition(
             rb.position + movement * (running? runSpeed : walkSpeed) * Time.fixedDeltaTime
         );
+    }
+
+    private IEnumerator BlinkTriggerCorountine()
+    {
+        float blinkAnimationDuration = 1f;
+        float minWaitTimeForBlink = 1f, maxWaitTimeForBlink = 3.5f;
+        while(true){
+            yield return new WaitForSeconds(
+                Random.Range(minWaitTimeForBlink, maxWaitTimeForBlink)
+            );
+            animator.SetTrigger("Blink");
+            yield return new WaitForSeconds(blinkAnimationDuration);
+        }
+    }
+
+    private float LastDirectionValue(Vector2 movement)
+    {
+        float lastDirectionValue = animator.GetFloat("LastDirection");
+        if(movement.y > 0)
+            lastDirectionValue = 0;
+        else if(movement.y < 0)
+            lastDirectionValue = 0.4f;
+        else if(movement.x > 0)
+            lastDirectionValue = 0.8f;
+        else if(movement.x < 0)
+            lastDirectionValue = 1f;
+        return lastDirectionValue;
     }
 }
