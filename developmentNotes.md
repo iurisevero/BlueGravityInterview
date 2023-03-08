@@ -77,13 +77,17 @@ The plan for the development were to start doing the necessary for the map const
 
 ### Tasks to be done (initial draft)
 
-- [ ] World building (tiles, palletes, colliders...)
-- [ ] Movimentation
+- [X] World building (tiles, palletes, colliders...)
+- [X] Movimentation
 - [ ] Interaction with other objects
 - [ ] Inventory
 - [ ] Changing clothes mechanics
 - [ ] Shop UI
 - [ ] Buy / Sell mechanics
+
+### Problems found
+
+- The assets selected for the player just have full body animations, what limits the chaging clothes mechanics to full body changes
 
 ## List of used Asset Packs
 
