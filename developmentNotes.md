@@ -99,8 +99,13 @@ After the moviment was complete and the basic interaction was made, I started to
 
 - The assets selected for the player just have full body animations, what limits the chaging clothes mechanics to full body changes
 
+### Comments
+
+- A decision a made to save time was the use o Scriptable Objects to Items. In a real systems I believe that using a Factory Pattern that receives an external document, like a JSON.
+
 ## Self-evaluation
 
+- I figure out a way to do the cloting change mechanics and I liked the way I did it, but at the start I wanted to make something better, where the user would be able to change the outfit from specific parts of the body. I actually figure out a way of doing it, but it didn't consider moviments and when I saw that the asset pack animations were full body, it threw me off.
 - I don't thing the way I handled the interaction between the player and other objects was the best, but I was losing too much time trying to think on a better approach. One idea I had was to pass the PlayerObject as parameter to the handler functions, but since the game is single player, I chose to call its instance directly in the function.
 
 ## List of used Asset Packs

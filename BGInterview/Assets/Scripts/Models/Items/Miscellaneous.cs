@@ -7,6 +7,6 @@ public class Miscellaneous : Item
 {
     public override void Use()
     {
-        Debug.Log("So... What are you for " + itemName + "?");
+        Debug.Log("So a " + itemName + "... What is this for?");
     }
 }

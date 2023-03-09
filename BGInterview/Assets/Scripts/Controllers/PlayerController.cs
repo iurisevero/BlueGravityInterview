@@ -6,13 +6,12 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] private Transform interactionCollider;
     private Rigidbody2D _rigidbody2D;
     private Animator animator;
     private Vector2 movement;
     private bool running = false;
     private Directions lastDirection = Directions.South;
-    [SerializeField]
-    private Transform interactionCollider;
 
     public float walkSpeed = 2f;
     public float runSpeed = 3f;
@@ -34,7 +33,7 @@ public class PlayerController : MonoBehaviour
         }
 
         if(Input.GetKeyDown(KeyCode.E)){
-            Player.GetInstance.Interact();
+            Player.Instance.Interact();
         }
 
         Move();
