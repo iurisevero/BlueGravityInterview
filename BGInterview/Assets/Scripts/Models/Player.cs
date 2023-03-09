@@ -7,9 +7,20 @@ public sealed class Player : Singleton<Player>
     private int maxItems = 999;
     private int maxCoins = 999999;
 
+    public Rigidbody2D _rigidbody2D { get; private set; }
+    public Animator animator { get; private set; }
+    public SpriteRenderer spriteRenderer { get; private set; }
     public Dictionary<Item, int> inventory = new Dictionary<Item, int>();
     public int coins = 0;
     public InteractableObject interactableObject { get; private set; }
+
+    private void Start()
+    {
+        _rigidbody2D = GetComponent<Rigidbody2D>();
+        animator = GetComponentInChildren<Animator>();
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        interactableObject = null;
+    }
 
     public void SetInteractableObject(InteractableObject obj)
     {

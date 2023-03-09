@@ -7,20 +7,19 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private Transform interactionCollider;
-    private Rigidbody2D _rigidbody2D;
-    private Animator animator;
+    private Rigidbody2D _rigidbody2D { get { return Player.Instance._rigidbody2D; }}
+    private Animator animator { get { return Player.Instance.animator; }}
     private Vector2 movement;
     private bool running = false;
     private Directions lastDirection = Directions.South;
 
     public float walkSpeed = 2f;
     public float runSpeed = 3f;
+    public Clothes clothes;
 
     // Start is called before the first frame update
     private void Start()
     {
-        _rigidbody2D = GetComponent<Rigidbody2D>();
-        animator = GetComponentInChildren<Animator>();
         StartCoroutine(BlinkTriggerCorountine());
     }
 
@@ -34,6 +33,7 @@ public class PlayerController : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.E)){
             Player.Instance.Interact();
+            animator.SetTrigger("Interaction");
         }
 
         Move();

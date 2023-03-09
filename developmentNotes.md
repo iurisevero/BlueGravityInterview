@@ -83,13 +83,13 @@ After the moviment was complete and the basic interaction was made, I started to
 - [X] Movimentation
     - [X] Improve Movimentation Animation
 - [X] Interaction with other objects
-    - [ ] Interaction with Trees
-    - [ ] Interaction with Bushes
-    - [ ] Interaction with Rocks
-    - [ ] Interaction with Cluster of Stones
+    - [X] Interaction with Trees
+    - [X] Interaction with Bushes
+    - [X] Interaction with Rocks
+    - [X] Interaction with Cluster of Stones
     - [ ] Interaction with Shopkeeper
-- [ ] Items: An item has a name, a type, a price and a "Use" function (that can be nothing)
-- [ ] Inventory
+- [X] Items: An item has a name, a type, a price and a "Use" function (that can be nothing)
+- [X] Inventory
     - [ ] Inventory UI
 - [ ] Changing clothes mechanics
 - [ ] Shop UI
@@ -115,3 +115,7 @@ After the moviment was complete and the basic interaction was made, I started to
     - https://free-game-assets.itch.io/seller-npc-character-sprites
     - https://free-game-assets.itch.io/wizard-4-direction-game-characters
     - https://free-game-assets.itch.io/archer-4-direction-characters
+- **Icons**
+    - https://free-game-assets.itch.io/farming-pixel-art-pack
+    - https://free-game-assets.itch.io/40-pixel-art-icons-for-field-location
+    - https://free-game-assets.itch.io/40-icons-for-crafting-pixel-art-pack

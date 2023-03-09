@@ -14,7 +14,7 @@ public class Rock : InteractableObject
         Gem gem = GetRandomGem();
         Debug.Log("A " + gem.itemName + " were found");
         Player.Instance.AddItemToInventory(gem);
-        Destroy(this);
+        Destroy(this.gameObject);
     }
 
     private Gem GetRandomGem()

@@ -15,6 +15,6 @@ public class ClusterOfStone : InteractableObject
         int coinsAmount = Random.Range(minCoinsAmount, maxCoinsAmount);
         Debug.Log(coinsAmount + " coins were found");
         Player.Instance.AddCoins(coinsAmount);
-        Destroy(this);
+        Destroy(this.gameObject);
     }
 }
