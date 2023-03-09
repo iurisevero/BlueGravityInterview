@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class InteractableObject : MonoBehaviour
 {
+    public Item item;
     protected virtual void OnTriggerEnter2D(Collider2D collider)
     {
         if(collider.transform.root.tag == "Player"){
             Debug.Log("Triggered by player");
-            PlayerController playerController = collider.transform.root.GetComponent<PlayerController>();
-            playerController.SetInteractableObject(this);
+            Player.GetInstance.SetInteractableObject(this);
         }
     }
 
@@ -17,8 +17,7 @@ public class InteractableObject : MonoBehaviour
     {
         if(collider.transform.root.tag == "Player"){
             Debug.Log("Player exits");
-            PlayerController playerController = collider.transform.root.GetComponent<PlayerController>();
-            playerController.SetInteractableObject(null);
+            Player.GetInstance.SetInteractableObject(null);
         }
     }
 

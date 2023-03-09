@@ -75,12 +75,20 @@ After listing the requirements, I made a list of tasks that I should do before s
 
 The plan for the development were to start doing the necessary for the map construction, create the tiles and palletes needed. After that, the aproach were to develop the core functions, starting by the walk, followed by the interaction with other objects.
 
+After the moviment was complete and the basic interaction was made, I started to think about how the player will get money to buy the clothes. The initial idea was to make the interaction with the environment return some items that could be selled, like fruits, logs or gems. However, to reach out this idea, is necessary to first develop an Item class, that will be used for most interactable objects.
+
 ### Tasks to be done (initial draft)
 
 - [X] World building (tiles, palletes, colliders...)
 - [X] Movimentation
     - [X] Improve Movimentation Animation
-- [ ] Interaction with other objects
+- [X] Interaction with other objects
+    - [ ] Interaction with Trees
+    - [ ] Interaction with Bushes
+    - [ ] Interaction with Rocks
+    - [ ] Interaction with Cluster of Stones
+    - [ ] Interaction with Shopkeeper
+- [ ] Items: An item has a name, a type, a price and a "Use" function (that can be nothing)
 - [ ] Inventory
     - [ ] Inventory UI
 - [ ] Changing clothes mechanics
@@ -90,6 +98,10 @@ The plan for the development were to start doing the necessary for the map const
 ### Problems found
 
 - The assets selected for the player just have full body animations, what limits the chaging clothes mechanics to full body changes
+
+## Self-evaluation
+
+- I don't thing the way I handled the interaction between the player and other objects was the best, but I was losing too much time trying to think on a better approach. One idea I had was to pass the PlayerObject as parameter to the handler functions, but since the game is single player, I chose to call its instance directly in the function.
 
 ## List of used Asset Packs
 

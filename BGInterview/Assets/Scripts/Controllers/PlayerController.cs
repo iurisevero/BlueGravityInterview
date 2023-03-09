@@ -16,14 +16,12 @@ public class PlayerController : MonoBehaviour
 
     public float walkSpeed = 2f;
     public float runSpeed = 3f;
-    public InteractableObject interactableObject { get; private set; }
 
     // Start is called before the first frame update
     private void Start()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
         animator = GetComponentInChildren<Animator>();
-        interactableObject = null;
         StartCoroutine(BlinkTriggerCorountine());
     }
 
@@ -36,7 +34,7 @@ public class PlayerController : MonoBehaviour
         }
 
         if(Input.GetKeyDown(KeyCode.E)){
-            Interact();
+            Player.GetInstance.Interact();
         }
 
         Move();
@@ -81,19 +79,5 @@ public class PlayerController : MonoBehaviour
     private void SetInteractionColliderDirection()
     {
         interactionCollider.rotation = Quaternion.Euler(0, 0, lastDirection.ToAngle());
-    }
-
-    private void Interact()
-    {
-        if(interactableObject != null)
-            interactableObject.Interaction();
-        else
-            Debug.Log("Theres nothing here...");
-    }
-
-    public void SetInteractableObject(InteractableObject obj)
-    {
-        Debug.Log("InteractableObject = " + obj);
-        interactableObject = obj;
     }
 }
