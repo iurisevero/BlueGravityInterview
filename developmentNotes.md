@@ -79,8 +79,10 @@ The plan for the development were to start doing the necessary for the map const
 
 - [X] World building (tiles, palletes, colliders...)
 - [X] Movimentation
+    - [X] Improve Movimentation Animation
 - [ ] Interaction with other objects
 - [ ] Inventory
+    - [ ] Inventory UI
 - [ ] Changing clothes mechanics
 - [ ] Shop UI
 - [ ] Buy / Sell mechanics
