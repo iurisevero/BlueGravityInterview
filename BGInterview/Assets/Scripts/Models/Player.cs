@@ -11,7 +11,7 @@ public sealed class Player : Singleton<Player>
     public Animator animator { get; private set; }
     public SpriteRenderer spriteRenderer { get; private set; }
     public Dictionary<Item, int> inventory = new Dictionary<Item, int>();
-    public int coins = 0;
+    public float coins = 0;
     public InteractableObject interactableObject { get; private set; }
 
     private void Start()
@@ -62,12 +62,12 @@ public sealed class Player : Singleton<Player>
             inventory.Remove(item);
     }
 
-    public void AddCoins(int coinsAmount)
+    public void AddCoins(float coinsAmount)
     {
-        coins = Mathf.Max(coins + coinsAmount, maxCoins);
+        coins = Mathf.Min(coins + coinsAmount, maxCoins);
     }
 
-    public bool RemoveCoins(int coinsAmount)
+    public bool RemoveCoins(float coinsAmount)
     {
         if(coinsAmount > coins)
             return false;

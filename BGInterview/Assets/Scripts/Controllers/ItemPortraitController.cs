@@ -16,6 +16,6 @@ public class ItemPortraitController : MonoBehaviour
         item = _item;
         itemImage.sprite = item.itemSprite;
         price.text = item.price.ToString();
-        quantity.text = quantity.ToString();
+        quantity.text = _quantity.ToString();
     }
 }
