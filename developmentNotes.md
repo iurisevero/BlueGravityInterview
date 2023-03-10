@@ -77,6 +77,8 @@ The plan for the development were to start doing the necessary for the map const
 
 After the moviment was complete and the basic interaction was made, I started to think about how the player will get money to buy the clothes. The initial idea was to make the interaction with the environment return some items that could be selled, like fruits, logs or gems. However, to reach out this idea, is necessary to first develop an Item class, that will be used for most interactable objects.
 
+After doindo some more research I found a way of doindo the clothes changing with Rig animation, however to accomplish that I would have to create the Rig of my player and recreate the used animations, what would cost a lot of time. As some core mechanics are not ready yet, they'll be priority, because the full body clothes change is already working, but the idea is to finish these mechanics and then start the Rig.
+
 ### Tasks to be done (initial draft)
 
 - [X] World building (tiles, palletes, colliders...)
@@ -91,7 +93,8 @@ After the moviment was complete and the basic interaction was made, I started to
 - [X] Items: An item has a name, a type, a price and a "Use" function (that can be nothing)
 - [X] Inventory
     - [ ] Inventory UI
-- [ ] Changing clothes mechanics
+- [X] Changing clothes mechanics
+    - [ ] Redo Changing clothes mechanics with Rig
 - [ ] Shop UI
 - [ ] Buy / Sell mechanics
 
@@ -110,6 +113,8 @@ After the moviment was complete and the basic interaction was made, I started to
 
 ## List of used Asset Packs
 
+- **GUI**
+    - https://free-game-assets.itch.io/pixel-art-2d-game-ui
 - **Sprites**
     - https://free-game-assets.itch.io/rpg-summer-tileset
     - https://free-game-assets.itch.io/seller-npc-character-sprites
