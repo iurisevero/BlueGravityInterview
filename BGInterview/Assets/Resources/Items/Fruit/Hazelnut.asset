@@ -16,3 +16,4 @@ MonoBehaviour:
   type: 1
   itemSprite: {fileID: 21300000, guid: e6d816ed49dcd22bba6602d89b5325b6, type: 3}
   price: 4
+  consumable: 1

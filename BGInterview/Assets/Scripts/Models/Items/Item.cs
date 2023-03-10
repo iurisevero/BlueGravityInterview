@@ -8,6 +8,7 @@ public class Item : ScriptableObject
     public ItemType type;
     public Sprite itemSprite;
     public float price;
+    public bool consumable;
 
     public virtual void Use()
     {
