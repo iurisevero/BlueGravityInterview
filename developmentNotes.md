@@ -35,15 +35,15 @@ After reading the task, my first thougth were to priorize the requirements consi
 
 ### Requirements
 
-1. [ ] Genre: Simulation
-2. [ ] Top-down view
-3. [ ] Player character that is able to walk and interact with the game world
-4. [ ] Clothes Shop
-    1. [ ] Talk to the shopkeeper
-    2. [ ] Buying/selling items
-    3. [ ] Item icons 
-    4. [ ] Item prices
-5. [ ] Outfits that are equipped should be visible on the character itself
+1. [X] Genre: Simulation
+2. [X] Top-down view
+3. [X] Player character that is able to walk and interact with the game world
+4. [X] Clothes Shop
+    1. [X] Talk to the shopkeeper
+    2. [X] Buying/selling items
+    3. [X] Item icons 
+    4. [X] Item prices
+5. [X] Outfits that are equipped should be visible on the character itself
 
 After listing the requirements, I made a list of tasks that I should do before starting the code development.
 
@@ -83,22 +83,23 @@ The development of the selling mechanic, selling UI and invetory spent more time
 
 Several hours were spent to create the sprites and animations with bones and it wasn't 100%. Some bugs appeared when switching sprites, the bones weren't rebind right, what caused problems in the animations. However, the other mechanics need to be done, so the focus now is to finish the buy mechanics and UI, the change outfit UI and the shopkeeper interaction. After finishing that I'll add some components that are necessary for every game, but that were left aside due to this development being being aimed at creating a prototype, like a menu, sounds, conversations and a tutorial.
 
+At the end, after adding the buy mechanic, the shop keeper and the change clothes UI, there wasn't much time left. The final implementations were aimed at a better user experience, so a tutorial and visual feedback for item collection were added.
 
 ### Tasks to be done
 
 - [X] World building (tiles, palletes, colliders...)
 - [X] Movimentation
     - [X] Improve Movimentation Animation
-- [ ] Interaction with other objects
+- [X] Interaction with other objects
     - [X] Interaction with Trees
     - [X] Interaction with Bushes
     - [X] Interaction with Rocks
     - [X] Interaction with Cluster of Stones
-    - [ ] Interaction with Shopkeeper
+    - [X] Interaction with Shopkeeper
 - [X] Items: An item has a name, a type, a price and a "Use" function (that can be nothing)
-- [ ] Inventory
+- [X] Inventory
     - [X] Inventory UI
-    - [ ] Change clothes UI
+    - [X] Change clothes UI
 - [X] Changing clothes mechanics
     - [X] Redo Changing clothes mechanics with Rig
 - [X] Shop UI
@@ -121,6 +122,7 @@ Several hours were spent to create the sprites and animations with bones and it 
 
 - I figure out a way to do the cloting change mechanics and I liked the way I did it, but at the start I wanted to make something better, where the user would be able to change the outfit from specific parts of the body. I actually figure out a way of doing it, but it didn't consider moviments and when I saw that the asset pack animations were full body, it threw me off.
 - I don't thing the way I handled the interaction between the player and other objects was the best, but I was losing too much time trying to think on a better approach. One idea I had was to pass the PlayerObject as parameter to the handler functions, but since the game is single player, I chose to call its instance directly in the function.
+- Despite I didn't had a previous experience with Rig2D, I figure out a way of adding bones to the sprites e make the animations. They weren't the best and had some bugs, but I believe they make do.
 
 ## List of used Asset Packs
 
