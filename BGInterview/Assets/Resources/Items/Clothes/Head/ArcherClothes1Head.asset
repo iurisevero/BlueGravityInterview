@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51a46f5b36fa98e4b9102ddb473026b7, type: 3}
+  m_Name: ArcherClothes1Head
+  m_EditorClassIdentifier: 
+  itemName: Archer Clothes 1 Head
+  type: 0
+  itemSprite: {fileID: 2751839206135473919, guid: ecab74fefd9981009b410bdd34ef6eca, type: 3}
+  price: 0
+  consumable: 0
+  headFront: {fileID: 2751839206135473919, guid: ecab74fefd9981009b410bdd34ef6eca, type: 3}
+  headBack: {fileID: -4578052565494910389, guid: bd0b5ae71b807bab284ddf7e89a327c7, type: 3}
+  headLeft: {fileID: 1619908212498855360, guid: 5ae720f247902fd2c8390a42a3bcbe9c, type: 3}
+  headRight: {fileID: -6833847548597943457, guid: 4f37025fd8d742846b9ba38609d1f1ff, type: 3}

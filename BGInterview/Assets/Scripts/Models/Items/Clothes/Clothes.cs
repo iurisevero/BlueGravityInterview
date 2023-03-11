@@ -5,9 +5,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Clothes", menuName = "ScriptableObjects/Clothes", order = 1)]
 public class Clothes : Item
 {
-    public AnimatorOverrideController animatorController;
-    public Sprite defaultSprite;
-
+    public Head head;
+    public Body body;
+    public Legs legs;
     public override void Use()
     {
         Debug.Log(itemName + " used");

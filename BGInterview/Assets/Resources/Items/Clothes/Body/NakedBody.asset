@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c968c2cab98b6fc5bad41d450750bfe, type: 3}
+  m_Name: NakedBody
+  m_EditorClassIdentifier: 
+  itemName: Naked Body
+  type: 0
+  itemSprite: {fileID: -6968331778641806460, guid: ddcfb3c0359a5f6af95d4d0d60fde192, type: 3}
+  price: 0
+  consumable: 0
+  lArm: {fileID: 1327133593120321090, guid: ddcfb3c0359a5f6af95d4d0d60fde192, type: 3}
+  rArm: {fileID: -4838540472592587761, guid: ddcfb3c0359a5f6af95d4d0d60fde192, type: 3}
+  bodyFront: {fileID: -6968331778641806460, guid: ddcfb3c0359a5f6af95d4d0d60fde192, type: 3}
+  bodyBack: {fileID: 5768417123543048972, guid: 2948849ddbc4116c3a0b48c123773d72, type: 3}
+  bodyLeft: {fileID: 8032563319407471606, guid: 79bb0d1ae569c7e48a954a3012077441, type: 3}
+  bodyRight: {fileID: 7482493965345679220, guid: e4b022ab31cca16fb9d742fca29e2f37, type: 3}

@@ -13,6 +13,13 @@ public sealed class Player : Singleton<Player>
     public Dictionary<Item, int> inventory = new Dictionary<Item, int>();
     public float coins = 0;
     public InteractableObject interactableObject { get; private set; }
+    public SpriteRenderer head;
+    public SpriteRenderer body;
+    public SpriteRenderer lArm;
+    public SpriteRenderer rArm;
+    public SpriteRenderer lLeg;
+    public SpriteRenderer rLeg;
+
 
     private void Start()
     {

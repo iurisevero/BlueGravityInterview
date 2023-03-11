@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c019af8af3c53ca649b4f7738c69f7ab, type: 3}
-  m_Name: NakedArcherClothes
+  m_Name: ArcherClothes1Clothes
   m_EditorClassIdentifier: 
-  itemName: Naked Archer
+  itemName: 
   type: 0
-  itemSprite: {fileID: 21300000, guid: 9685e6facfeea8e098eb0ce9a525cb72, type: 3}
+  itemSprite: {fileID: 0}
   price: 0
   consumable: 0
-  head: {fileID: 11400000, guid: e38f47b6b61a983268a32a41c714218f, type: 2}
-  body: {fileID: 11400000, guid: 1b5fb5ca00365a34fb75fbb1f15f1ca3, type: 2}
-  legs: {fileID: 11400000, guid: b4f938da8242f20d28c12aaae3e4af3a, type: 2}
+  head: {fileID: 11400000, guid: 42f908f6b4edaaded87d7819331e2efd, type: 2}
+  body: {fileID: 11400000, guid: eed7d411a13438255bc1e81a3ff13dd1, type: 2}
+  legs: {fileID: 11400000, guid: 1197b4e0797c00f789a5edfbae24018f, type: 2}
