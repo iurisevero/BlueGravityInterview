@@ -7,6 +7,7 @@ public sealed class Player : Singleton<Player>
 {
     private int maxItems = 999;
     private int maxCoins = 999999;
+    [SerializeField] WorldUIController worldUIController;
 
     public Rigidbody2D _rigidbody2D { get; private set; }
     public Animator animator { get; private set; }
@@ -17,7 +18,7 @@ public sealed class Player : Singleton<Player>
     public HashSet<Legs> legs = new HashSet<Legs>();
     public float coins = 0;
     public InteractableObject interactableObject { get; private set; }
-    public Clothes equippedClothes, initialClothes, testClothes;
+    public Clothes equippedClothes, initialClothes;
     public SpriteRenderer headSprite;
     public SpriteRenderer bodySprite;
     public SpriteRenderer lArmSprite;
@@ -33,20 +34,12 @@ public sealed class Player : Singleton<Player>
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         interactableObject = null;
 
-        if(equippedClothes.head.headFront == null){
-            EquipHead(initialClothes.head);
-            EquipBody(initialClothes.body);
-            EquipLegs(initialClothes.legs);
-        }
+        EquipHead(initialClothes.head);
+        EquipBody(initialClothes.body);
+        EquipLegs(initialClothes.legs);
         heads.Add(equippedClothes.head);
         bodies.Add(equippedClothes.body);
         legs.Add(equippedClothes.legs);
-        heads.Add(testClothes.head);
-        bodies.Add(testClothes.body);
-        legs.Add(testClothes.legs);
-        inventory[testClothes.head] = 1;
-        inventory[testClothes.body] = 1;
-        inventory[testClothes.legs] = 1;
     }
 
     public void EquipHead(Head head)
@@ -56,7 +49,6 @@ public sealed class Player : Singleton<Player>
         equippedClothes.head.headLeft = head.headLeft;
         equippedClothes.head.headRight = head.headRight;
         UpdateVisual();
-        Debug.Log("Equip HEAD");
     }
 
     public void EquipBody(Body body)
@@ -130,6 +122,7 @@ public sealed class Player : Singleton<Player>
     public void AddCoins(float coinsAmount)
     {
         coins = Mathf.Min(coins + coinsAmount, maxCoins);
+        worldUIController.UpdateCoins();
     }
 
     public bool RemoveCoins(float coinsAmount)
@@ -138,6 +131,7 @@ public sealed class Player : Singleton<Player>
             return false;
         
         coins -= coinsAmount;
+        worldUIController.UpdateCoins();
         return true;
     }
 }

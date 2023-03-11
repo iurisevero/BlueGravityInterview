@@ -20,6 +20,9 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        if(ShopUIController.OpenShopUI || WorldUIController.OpenMenu)
+            return;
+
         if(Input.GetKeyDown(KeyCode.LeftShift)){
             running = !running;
             animator.SetBool("Running", running);

@@ -123,9 +123,6 @@ MonoBehaviour:
   mainWindowPanel: {fileID: 5065089470734153019}
   sellWindowController: {fileID: 457710293137111883}
   buyWindowController: {fileID: 4158554778944480479}
-  clothesTest:
-  - {fileID: 11400000, guid: ead92563a4224b32aa9ac66deee728b1, type: 2}
-  - {fileID: 11400000, guid: 04ec335dfe53a5d46ae8d081492e7a9f, type: 2}
 --- !u!1 &457710293789209562
 GameObject:
   m_ObjectHideFlags: 0
@@ -246,7 +243,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 25
+  m_AdditionalShaderChannelsFlag: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -301,6 +298,22 @@ PrefabInstance:
       propertyPath: rectMask2D
       value: 
       objectReference: {fileID: 8882057981778052835}
+    - target: {fileID: 457710294008636833, guid: 020a5d8344c6f122bb2d82e62a477deb, type: 3}
+      propertyPath: nakedClothes
+      value: 
+      objectReference: {fileID: 11400000, guid: 04ec335dfe53a5d46ae8d081492e7a9f, type: 2}
+    - target: {fileID: 457710294008636833, guid: 020a5d8344c6f122bb2d82e62a477deb, type: 3}
+      propertyPath: bodyBuyButton
+      value: 
+      objectReference: {fileID: 3836496912432243936}
+    - target: {fileID: 457710294008636833, guid: 020a5d8344c6f122bb2d82e62a477deb, type: 3}
+      propertyPath: headBuyButton
+      value: 
+      objectReference: {fileID: 457710294251680970}
+    - target: {fileID: 457710294008636833, guid: 020a5d8344c6f122bb2d82e62a477deb, type: 3}
+      propertyPath: legsBuyButton
+      value: 
+      objectReference: {fileID: 7065515458550504114}
     - target: {fileID: 779618628079822238, guid: 020a5d8344c6f122bb2d82e62a477deb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -660,6 +673,28 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4158554778708076413, guid: 020a5d8344c6f122bb2d82e62a477deb, type: 3}
   m_PrefabInstance: {fileID: 4606120975708291454}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &457710294251680970 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4158554779304900020, guid: 020a5d8344c6f122bb2d82e62a477deb, type: 3}
+  m_PrefabInstance: {fileID: 4606120975708291454}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3836496912432243936 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 779618628079822238, guid: 020a5d8344c6f122bb2d82e62a477deb, type: 3}
+  m_PrefabInstance: {fileID: 4606120975708291454}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &4158554778944480479 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 457710294008636833, guid: 020a5d8344c6f122bb2d82e62a477deb, type: 3}
@@ -669,6 +704,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 650cf788cce4103d4beec2acc101d74e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7065515458550504114 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6764963269959392204, guid: 020a5d8344c6f122bb2d82e62a477deb, type: 3}
+  m_PrefabInstance: {fileID: 4606120975708291454}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &5015434242452951457
@@ -959,7 +1005,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5688844006461961197, guid: 4bcbd793f26a0b51fab022f579d7bba1, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.000037312508
+      value: -0.000012636185
       objectReference: {fileID: 0}
     - target: {fileID: 5688844006461961197, guid: 4bcbd793f26a0b51fab022f579d7bba1, type: 3}
       propertyPath: m_AnchoredPosition.y

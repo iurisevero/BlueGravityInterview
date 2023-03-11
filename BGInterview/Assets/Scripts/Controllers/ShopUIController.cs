@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ShopUIController : MonoBehaviour
 {
+    public static bool OpenShopUI = false;
     const string HideKey = "Hide";
     const string ShowKey = "Show";
     [SerializeField] private Panel shopPanel;
@@ -15,22 +16,10 @@ public class ShopUIController : MonoBehaviour
     private List<Clothes> clothesToBuy;
     private Dictionary<Item, int> selectedItems;
     private float totalPrice;
-    public List<Clothes> clothesTest;
 
     private void Start()
     {
         ShowMainWindow();
-    }
-
-    private void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.Escape))
-            ExitShop();
-
-        if(Input.GetKeyDown(KeyCode.L)){
-            ShowShop();
-            SetItemsToBuy(clothesTest);
-        }
     }
 
     private void TogglePos(Panel panel, string pos)
@@ -92,6 +81,7 @@ public class ShopUIController : MonoBehaviour
                 default:
                     break;
             }
+            buyWindowController.UpdateSprites();
         } else{
             Debug.Log("Player doesn't have money to buy " + item.itemName);
         }
@@ -197,11 +187,13 @@ public class ShopUIController : MonoBehaviour
     public void ShowShop()
     {
         selectedItems = new Dictionary<Item, int>();
+        OpenShopUI = true;
         TogglePos(shopPanel, ShowKey);
     }
 
     public void HideShop()
     {
+        OpenShopUI = false;
         TogglePos(shopPanel, HideKey);
     }
 

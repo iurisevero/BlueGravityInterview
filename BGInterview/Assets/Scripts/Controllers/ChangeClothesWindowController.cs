@@ -32,7 +32,6 @@ public class ChangeClothesWindowController : MonoBehaviour
         heads = new List<Head>(Player.Instance.heads);
         bodies = new List<Body>(Player.Instance.bodies);
         legs = new List<Legs>(Player.Instance.legs);
-        Debug.Log("Player outifits: " + heads.Count + " " + bodies.Count + " " + legs.Count);
     }
 
     public void NextHead()
