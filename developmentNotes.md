@@ -81,8 +81,10 @@ After doind some more research I found a way of doind the clothes changing with 
 
 The development of the selling mechanic, selling UI and invetory spent more time than planned, what made me change the plans around the creation of a Rig for the player. Despite the mechanics of purchase not being ready, doind the Rig became priority because it will influence on how the buy will be made. If the outfit's creation is successful, updates to the outfit changing mechanic will be made, as well as their interfaces. Finally, the purchase mechanism, its interfaces and the interaction with the seller will be made.
 
+Several hours were spent to create the sprites and animations with bones and it wasn't 100%. Some bugs appeared when switching sprites, the bones weren't rebind right, what caused problems in the animations. However, the other mechanics need to be done, so the focus now is to finish the buy mechanics and UI, the change outfit UI and the shopkeeper interaction. After finishing that I'll add some components that are necessary for every game, but that were left aside due to this development being being aimed at creating a prototype, like a menu, sounds, conversations and a tutorial.
 
-### Tasks to be done (initial draft)
+
+### Tasks to be done
 
 - [X] World building (tiles, palletes, colliders...)
 - [X] Movimentation
@@ -98,17 +100,18 @@ The development of the selling mechanic, selling UI and invetory spent more time
     - [X] Inventory UI
     - [ ] Change clothes UI
 - [X] Changing clothes mechanics
-    - [ ] Redo Changing clothes mechanics with Rig
-- [ ] Shop UI
+    - [X] Redo Changing clothes mechanics with Rig
+- [X] Shop UI
     - [X] Sell UI
-    - [ ] Buy UI
-- [ ] Buy / Sell mechanics
+    - [X] Buy UI
+- [X] Buy / Sell mechanics
     - [X] Sell mechanics
-    - [ ] Buy mechanics
+    - [X] Buy mechanics
 
 ### Problems found
 
 - The assets selected for the player just have full body animations, what limits the chaging clothes mechanics to full body changes
+- After creating new sprites and trying to add bones to it, some bugs appeared after chaging sprites
 
 ### Comments
 

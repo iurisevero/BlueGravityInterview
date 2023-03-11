@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,7 @@ public sealed class Player : Singleton<Player>
     public Dictionary<Item, int> inventory = new Dictionary<Item, int>();
     public float coins = 0;
     public InteractableObject interactableObject { get; private set; }
+    public Clothes equippedClothes, initialClothes;
     public SpriteRenderer head;
     public SpriteRenderer body;
     public SpriteRenderer lArm;
@@ -27,6 +29,36 @@ public sealed class Player : Singleton<Player>
         animator = GetComponentInChildren<Animator>();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         interactableObject = null;
+
+        if(equippedClothes.head.headFront == null){
+            EquipHead(initialClothes.head);
+            EquipBody(initialClothes.body);
+            EquipLegs(initialClothes.legs);
+        }
+    }
+
+    public void EquipHead(Head head)
+    {
+        equippedClothes.head.headBack = head.headBack;
+        equippedClothes.head.headFront = head.headFront;
+        equippedClothes.head.headLeft = head.headLeft;
+        equippedClothes.head.headRight = head.headRight;
+    }
+
+    public void EquipBody(Body body)
+    {
+        equippedClothes.body.bodyBack = body.bodyBack;
+        equippedClothes.body.bodyFront = body.bodyFront;
+        equippedClothes.body.bodyLeft = body.bodyLeft;
+        equippedClothes.body.bodyRight = body.bodyRight;
+        equippedClothes.body.lArm = body.lArm;
+        equippedClothes.body.rArm = body.rArm;
+    }
+
+    public void EquipLegs(Legs legs)
+    {
+        equippedClothes.legs.lLeg = legs.lLeg;
+        equippedClothes.legs.rLeg = legs.rLeg;
     }
 
     public void SetInteractableObject(InteractableObject obj)

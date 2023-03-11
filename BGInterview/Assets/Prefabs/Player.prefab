@@ -214,6 +214,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coins: 0
+  equippedClothes: {fileID: 11400000, guid: 851a34ffb9e80f65fb4bd855063ea092, type: 2}
+  initialClothes: {fileID: 11400000, guid: 04ec335dfe53a5d46ae8d081492e7a9f, type: 2}
   head: {fileID: 407787674698963293}
   body: {fileID: 7536428132582931838}
   lArm: {fileID: 5266748069609218244}
@@ -235,9 +237,6 @@ MonoBehaviour:
   interactionCollider: {fileID: 6902527072218642743}
   walkSpeed: 2
   runSpeed: 3
-  clothes:
-  - {fileID: 11400000, guid: 04ec335dfe53a5d46ae8d081492e7a9f, type: 2}
-  - {fileID: 11400000, guid: ead92563a4224b32aa9ac66deee728b1, type: 2}
 --- !u!50 &6902527073999134303
 Rigidbody2D:
   serializedVersion: 4

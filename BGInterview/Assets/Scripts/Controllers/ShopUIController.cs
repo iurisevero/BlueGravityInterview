@@ -9,10 +9,13 @@ public class ShopUIController : MonoBehaviour
     [SerializeField] private Panel shopPanel;
     [SerializeField] private Panel mainWindowPanel;
     [SerializeField] SellWindowController sellWindowController;
+    [SerializeField] BuyWindowController buyWindowController;
     ItemType seletedTab;
     private Dictionary<Item, int> itemsToSell;
+    private List<Clothes> clothesToBuy;
     private Dictionary<Item, int> selectedItems;
     private float totalPrice;
+    public List<Clothes> clothesTest;
 
     private void Start()
     {
@@ -24,8 +27,10 @@ public class ShopUIController : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Escape))
             ExitShop();
 
-        if(Input.GetKeyDown(KeyCode.L))
+        if(Input.GetKeyDown(KeyCode.L)){
             ShowShop();
+            SetItemsToBuy(clothesTest);
+        }
     }
 
     private void TogglePos(Panel panel, string pos)
@@ -58,6 +63,34 @@ public class ShopUIController : MonoBehaviour
             default:
                 SelectMiscellaneous();
                 break;
+        }
+    }
+
+    public void BuyItem(Item item, BodyParts bodyPart)
+    {
+        bool hasMoney = Player.Instance.RemoveCoins(item.price);
+        if(hasMoney){
+            Player.Instance.AddItemToInventory(item);
+            switch (bodyPart)
+            {
+                case BodyParts.Head:
+                    Head head = item as Head;
+                    Debug.Log("Head: " + head.headFront);
+                    buyWindowController.heads.Remove(head);
+                    break;
+                case BodyParts.Body:
+                    Body body = item as Body;
+                    buyWindowController.bodies.Remove(body);
+                    break;
+                case BodyParts.Legs:
+                    Legs legs = item as Legs;
+                    buyWindowController.legs.Remove(legs);
+                    break;
+                default:
+                    break;
+            }
+        } else{
+            Debug.Log("Player doesn't have money to buy " + item.itemName);
         }
     }
 
@@ -132,10 +165,30 @@ public class ShopUIController : MonoBehaviour
     }
 #endregion
 
-    // public void SetItemsToBuy(Dictionary<Item, int> items)
-    // {
-    //     itemsToBuy = new Dictionary<Item, int>(items);
-    // }
+#region Buy Functions
+    public void BuyHead()
+    {
+        Item itemToBuy = buyWindowController.heads[buyWindowController.currentHead];
+        BuyItem(itemToBuy, BodyParts.Head);
+    }
+
+    public void BuyBody()
+    {
+        Item itemToBuy = buyWindowController.bodies[buyWindowController.currentBody];
+        BuyItem(itemToBuy, BodyParts.Body);
+    }
+
+    public void BuyLegs()
+    {
+        Item itemToBuy = buyWindowController.legs[buyWindowController.currentLegs];
+        BuyItem(itemToBuy, BodyParts.Legs);
+    }
+
+    public void SetItemsToBuy(List<Clothes> clothes)
+    {
+        clothesToBuy = new List<Clothes>(clothes);
+    }
+#endregion
 
 #region UI Functions
     public void ShowShop()
@@ -162,7 +215,7 @@ public class ShopUIController : MonoBehaviour
     public void ExitShop()
     {
         sellWindowController.Hide();
-        // buyWindowController.Hide();
+        buyWindowController.Hide();
         ShowMainWindow();
         HideShop();
     }
@@ -181,16 +234,17 @@ public class ShopUIController : MonoBehaviour
         ShowMainWindow();
     }
 
-    // public void ShowBuyWindow()
-    // {
-    //     buyWindowController.Show();
-    //     HideMainWindow();
-    // }
+    public void ShowBuyWindow()
+    {
+        buyWindowController.PopulateBuyItems(clothesToBuy);
+        buyWindowController.Show();
+        HideMainWindow();
+    }
 
-    // public void ReturnBuyWindow()
-    // {
-    //     buyWindowController.Hide();
-    //     ShowMainWindow();
-    // }
+    public void ReturnBuyWindow()
+    {
+        buyWindowController.Hide();
+        ShowMainWindow();
+    }
 #endregion
 }

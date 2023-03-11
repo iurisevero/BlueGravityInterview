@@ -30,7 +30,7 @@ public class SellWindowController : MonoBehaviour
 
     private IEnumerator maskReturnSupportCoroutine(bool mask)
     {
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.1f);
         returnSupport.maskable = mask;
     }
 
