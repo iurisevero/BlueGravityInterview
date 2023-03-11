@@ -12,15 +12,18 @@ public sealed class Player : Singleton<Player>
     public Animator animator { get; private set; }
     public SpriteRenderer spriteRenderer { get; private set; }
     public Dictionary<Item, int> inventory = new Dictionary<Item, int>();
+    public HashSet<Head> heads = new HashSet<Head>();
+    public HashSet<Body> bodies = new HashSet<Body>();
+    public HashSet<Legs> legs = new HashSet<Legs>();
     public float coins = 0;
     public InteractableObject interactableObject { get; private set; }
-    public Clothes equippedClothes, initialClothes;
-    public SpriteRenderer head;
-    public SpriteRenderer body;
-    public SpriteRenderer lArm;
-    public SpriteRenderer rArm;
-    public SpriteRenderer lLeg;
-    public SpriteRenderer rLeg;
+    public Clothes equippedClothes, initialClothes, testClothes;
+    public SpriteRenderer headSprite;
+    public SpriteRenderer bodySprite;
+    public SpriteRenderer lArmSprite;
+    public SpriteRenderer rArmSprite;
+    public SpriteRenderer lLegSprite;
+    public SpriteRenderer rLegSprite;
 
 
     private void Start()
@@ -35,6 +38,15 @@ public sealed class Player : Singleton<Player>
             EquipBody(initialClothes.body);
             EquipLegs(initialClothes.legs);
         }
+        heads.Add(equippedClothes.head);
+        bodies.Add(equippedClothes.body);
+        legs.Add(equippedClothes.legs);
+        heads.Add(testClothes.head);
+        bodies.Add(testClothes.body);
+        legs.Add(testClothes.legs);
+        inventory[testClothes.head] = 1;
+        inventory[testClothes.body] = 1;
+        inventory[testClothes.legs] = 1;
     }
 
     public void EquipHead(Head head)
@@ -43,6 +55,8 @@ public sealed class Player : Singleton<Player>
         equippedClothes.head.headFront = head.headFront;
         equippedClothes.head.headLeft = head.headLeft;
         equippedClothes.head.headRight = head.headRight;
+        UpdateVisual();
+        Debug.Log("Equip HEAD");
     }
 
     public void EquipBody(Body body)
@@ -53,12 +67,24 @@ public sealed class Player : Singleton<Player>
         equippedClothes.body.bodyRight = body.bodyRight;
         equippedClothes.body.lArm = body.lArm;
         equippedClothes.body.rArm = body.rArm;
+        UpdateVisual();
     }
 
     public void EquipLegs(Legs legs)
     {
         equippedClothes.legs.lLeg = legs.lLeg;
         equippedClothes.legs.rLeg = legs.rLeg;
+        UpdateVisual();
+    }
+
+    public void UpdateVisual()
+    {
+        headSprite.sprite = equippedClothes.head.headFront;
+        bodySprite.sprite = equippedClothes.body.bodyFront;
+        lArmSprite.sprite = equippedClothes.body.lArm;
+        rArmSprite.sprite = equippedClothes.body.rArm;
+        lLegSprite.sprite = equippedClothes.legs.lLeg;
+        rLegSprite.sprite = equippedClothes.legs.rLeg;
     }
 
     public void SetInteractableObject(InteractableObject obj)

@@ -11,6 +11,8 @@ public class InventoryUIController : MonoBehaviour
     [SerializeField] private Panel panel;
     [SerializeField] private GameObject inventoryItemPrefab;
     [SerializeField] private RectTransform itemsContainer;
+    [SerializeField] private GameObject mainWindow;
+    [SerializeField] private ChangeClothesWindowController changeClothesWindowController;
     private bool isOpen = false;
     private Item selectedItem;
     private Image selectedItemImage;
@@ -107,7 +109,9 @@ public class InventoryUIController : MonoBehaviour
             Debug.Log("Inventory Item: " + item.Key.itemName);
             portraitController.SetItem(item.Key, item.Value);
             portraitController.transform.SetParent(itemsContainer, false);
-            Button button = portraitController.gameObject.AddComponent<Button>();
+            Button button = portraitController.gameObject.GetComponent<Button>();
+            if(button == null)
+                button = portraitController.gameObject.AddComponent<Button>();
             button.onClick.AddListener(delegate { 
                 ToogleSelectItem(item.Key, portraitController.GetItemImage()); 
             });
@@ -162,9 +166,34 @@ public class InventoryUIController : MonoBehaviour
         Transform portraitTransform;
         while(itemsContainer.childCount != 0){
             portraitTransform = itemsContainer.GetChild(0);
-            portraitTransform.gameObject.GetComponent<Button>().onClick.RemoveAllListeners();
+            Button button = portraitTransform.gameObject.GetComponent<Button>();
+            Destroy(button);
             Enqueue(portraitTransform.gameObject);
         }
+    }
+
+    public void EquipHead()
+    {
+        Player.Instance.EquipHead(
+            changeClothesWindowController.heads[changeClothesWindowController.currentHead]
+        );
+        Hide();
+    }
+
+    public void EquipBody()
+    {
+        Player.Instance.EquipBody(
+            changeClothesWindowController.bodies[changeClothesWindowController.currentBody]
+        );
+        Hide();
+    }
+
+    public void EquipLegs()
+    {
+        Player.Instance.EquipLegs(
+            changeClothesWindowController.legs[changeClothesWindowController.currentLegs]
+        );
+        Hide();
     }
 
     public void ToogleInventory()
@@ -185,6 +214,21 @@ public class InventoryUIController : MonoBehaviour
     public void Hide()
     {
         TogglePos(panel, HideKey);
+        CloseClothesWindow();
+        Clear();
         isOpen = false;
+    }
+
+    public void ShowClothesWindow()
+    {
+        changeClothesWindowController.Show();
+        changeClothesWindowController.PopulateChangeClothes();
+        mainWindow.SetActive(false);
+    }
+
+    public void CloseClothesWindow()
+    {
+        changeClothesWindowController.Hide();
+        mainWindow.SetActive(true);
     }
 }

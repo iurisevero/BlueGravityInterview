@@ -216,12 +216,12 @@ MonoBehaviour:
   coins: 0
   equippedClothes: {fileID: 11400000, guid: 851a34ffb9e80f65fb4bd855063ea092, type: 2}
   initialClothes: {fileID: 11400000, guid: 04ec335dfe53a5d46ae8d081492e7a9f, type: 2}
-  head: {fileID: 407787674698963293}
-  body: {fileID: 7536428132582931838}
-  lArm: {fileID: 5266748069609218244}
-  rArm: {fileID: 1230449631814629832}
-  lLeg: {fileID: 4149222719892157395}
-  rLeg: {fileID: 6788935881964614679}
+  headSprite: {fileID: 407787674698963293}
+  bodySprite: {fileID: 7536428132582931838}
+  lArmSprite: {fileID: 5266748069609218244}
+  rArmSprite: {fileID: 1230449631814629832}
+  lLegSprite: {fileID: 4149222719892157395}
+  rLegSprite: {fileID: 6788935881964614679}
 --- !u!114 &6902527073999134289
 MonoBehaviour:
   m_ObjectHideFlags: 0

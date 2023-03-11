@@ -79,8 +79,8 @@ public class PlayerController : MonoBehaviour
                 break;
         }
 
-        Player.Instance.head.sprite = headSprite;
-        Player.Instance.body.sprite = bodySprite;
+        Player.Instance.headSprite.sprite = headSprite;
+        Player.Instance.bodySprite.sprite = bodySprite;
     }
 
     private void SetInteractionColliderDirection()

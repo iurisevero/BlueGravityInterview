@@ -77,14 +77,17 @@ public class ShopUIController : MonoBehaviour
                     Head head = item as Head;
                     Debug.Log("Head: " + head.headFront);
                     buyWindowController.heads.Remove(head);
+                    Player.Instance.heads.Add(head);
                     break;
                 case BodyParts.Body:
                     Body body = item as Body;
                     buyWindowController.bodies.Remove(body);
+                    Player.Instance.bodies.Add(body);
                     break;
                 case BodyParts.Legs:
                     Legs legs = item as Legs;
                     buyWindowController.legs.Remove(legs);
+                    Player.Instance.legs.Add(legs);
                     break;
                 default:
                     break;
