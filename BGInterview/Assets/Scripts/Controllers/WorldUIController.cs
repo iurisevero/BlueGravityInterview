@@ -8,7 +8,7 @@ public class WorldUIController : MonoBehaviour
     public static bool OpenMenu = false;
     [SerializeField] private GameObject menuWindow;
     [SerializeField] private TextMeshProUGUI coinsQuantity;
-    [SerializeField] private AudioSource sound;
+    // [SerializeField] private AudioSource sound;
 
     private void Start()
     {
@@ -31,22 +31,22 @@ public class WorldUIController : MonoBehaviour
             OpenMenuUI();
     }
 
-    private void PlaySound()
-    {
-        sound.pitch = 1f;
-        sound.volume = 0.6f;
-        sound.Play();
-    }
+    // private void PlaySound()
+    // {
+    //     sound.pitch = 1f;
+    //     sound.volume = 0.6f;
+    //     sound.Play();
+    // }
 
-    public void Mute()
-    {
-        sound.volume = 0;
-    }
+    // public void Mute()
+    // {
+    //     sound.volume = 0;
+    // }
 
-    public void UnMute()
-    {
-        sound.volume = 0.6f;
-    }
+    // public void UnMute()
+    // {
+    //     sound.volume = 0.6f;
+    // }
 
     public void UpdateCoins()
     {

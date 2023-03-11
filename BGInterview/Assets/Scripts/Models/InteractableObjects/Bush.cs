@@ -21,6 +21,7 @@ public class Bush : InteractableObject
             Player.Instance.AddItemToInventory(fruit, fruitQuantity);
             hasFruit = false;
             spriteRenderer.sprite = noFruitBush;
+            FloatingSpriteController.Instance.FloatSprite(this.transform, fruit.itemSprite);
             StartCoroutine(Respawn());
         } else{
             Debug.Log("There is no fruits here...");

@@ -14,6 +14,14 @@ public class Rock : InteractableObject
         Gem gem = GetRandomGem();
         Debug.Log("A " + gem.itemName + " were found");
         Player.Instance.AddItemToInventory(gem);
+        FloatingSpriteController.Instance.FloatSprite(this.transform, gem.itemSprite);
+        StartCoroutine(WaitToDestroy());
+    }
+
+    private IEnumerator WaitToDestroy()
+    {
+        this.transform.GetChild(0).gameObject.SetActive(false);
+        yield return new WaitForSeconds(5f);
         Destroy(this.gameObject);
     }
 

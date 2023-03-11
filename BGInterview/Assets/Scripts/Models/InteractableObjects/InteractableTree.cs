@@ -23,10 +23,12 @@ public class InteractableTree : InteractableObject
             logsQuantity--;
             Debug.Log("A log was taken. " + logsQuantity + " logs left.");
             Player.Instance.AddItemToInventory(logs);
+            FloatingSpriteController.Instance.FloatSprite(this.transform, logs.itemSprite);
 
             if(Random.Range(1, 100) < chanceToDropFruit){
                 Debug.Log("A fruit was taken.");
                 Player.Instance.AddItemToInventory(fruit);
+                FloatingSpriteController.Instance.FloatSprite(this.transform, fruit.itemSprite);
             }
 
             if(logsQuantity == 0){
