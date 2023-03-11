@@ -15,7 +15,7 @@ MonoBehaviour:
   itemName: Archer Clothes 1 Head
   type: 0
   itemSprite: {fileID: 2751839206135473919, guid: ecab74fefd9981009b410bdd34ef6eca, type: 3}
-  price: 0
+  price: 15
   consumable: 0
   headFront: {fileID: 2751839206135473919, guid: ecab74fefd9981009b410bdd34ef6eca, type: 3}
   headBack: {fileID: -4578052565494910389, guid: bd0b5ae71b807bab284ddf7e89a327c7, type: 3}

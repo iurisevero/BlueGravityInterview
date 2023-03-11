@@ -15,7 +15,7 @@ MonoBehaviour:
   itemName: Archer Clothes 1 Legs
   type: 0
   itemSprite: {fileID: -2524003905570179795, guid: ecab74fefd9981009b410bdd34ef6eca, type: 3}
-  price: 0
+  price: 25
   consumable: 0
   lLeg: {fileID: -2524003905570179795, guid: ecab74fefd9981009b410bdd34ef6eca, type: 3}
   rLeg: {fileID: -7128173183458675752, guid: ecab74fefd9981009b410bdd34ef6eca, type: 3}

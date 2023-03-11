@@ -15,4 +15,5 @@ MonoBehaviour:
   itemName: Emerald
   type: 2
   itemSprite: {fileID: 21300000, guid: 92f3c8669f1b32b14810e31dbb1bafb9, type: 3}
-  price: 25
+  price: 50
+  consumable: 0
